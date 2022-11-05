@@ -1,0 +1,35 @@
+version: '3.5'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+
+  rorapp:
+    build:
+      context: .
+      dockerfile: docker/development.Dockerfile
+    image: rorapp
+    container_name: rorapp
+    command: /bin/sh
+    tty: true
+    env_file:
+    - .env
+    volumes:
+      - .:/rorapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    external_links:
+      - postgres
+
+volumes:
+  postgres:
