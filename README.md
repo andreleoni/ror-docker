@@ -1,24 +1,21 @@
-# README
+# RoR Docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicativo apenas para exemplificar o uso de Docker com postgres e dockerfile.
 
-Things you may want to cover:
+# Comandos
 
-* Ruby version
+Iniciar o ambiente:
 
-* System dependencies
+`make start`
 
-* Configuration
+Acessar o console do rails:
 
-* Database creation
+`make console`
 
-* Database initialization
+Fazer o setup do ambiente:
 
-* How to run the test suite
+`make setup`
 
-* Services (job queues, cache servers, search engines, etc.)
+Criar os seeds do banco de dados:
 
-* Deployment instructions
-
-* ...
+`make seed`

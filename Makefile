@@ -7,4 +7,6 @@ console:
 setup:
 	docker exec -it rorapp rails db:create
 	docker exec -it rorapp rails db:migrate
+
+seed;
 	docker exec -it rorapp rails db:seed
